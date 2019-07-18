@@ -94,7 +94,7 @@ function! ale_linters#java#eclipselsp#WorkspacePath(buffer) abort
     let l:wspath = ale#Var(a:buffer, 'java_eclipselsp_workspace_path')
 
     if !empty(l:wspath)
-        return l:wspath
+        return l:wspath . ale#java#FindProjectRoot(a:buffer)
     endif
 
     return ale#path#Dirname(ale#java#FindProjectRoot(a:buffer))
