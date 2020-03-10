@@ -106,6 +106,7 @@ function! ale_linters#java#eclipselsp#Command(buffer, version) abort
     let l:executable = ale_linters#java#eclipselsp#Executable(a:buffer)
 
     let l:cmd = [ ale#Escape(l:executable),
+    \ '-javaagent:/root/lombok.jar',
     \ '-Declipse.application=org.eclipse.jdt.ls.core.id1',
     \ '-Dosgi.bundles.defaultStartLevel=4',
     \ '-Declipse.product=org.eclipse.jdt.ls.core.product',
